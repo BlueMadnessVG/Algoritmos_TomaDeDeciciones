@@ -1,0 +1,65 @@
+<div class="Main_info">
+
+    <!-- TABLA DE DATOS -->
+<!--     <table id="tableId" class="cont_table">
+        <thead >
+            <tr>
+                <th> NOMBRE </th>
+                <th> ALTO </th>
+                <th> MEDIO </th>
+                <th> BAJO </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="tr_input" name="inp_1">
+                <td> <input type="text" id="inp_1-0"> </td>
+                <td> <input type="number" name="inp_1-1"> </td>
+                <td> <input type="number" name="inp_1-2"> </td>
+                <td> <input type="number" name="inp_1-3"> </td>
+            </tr>
+            <tr class="tr_input"  name="inp_2">
+                <td> <input type="text" id="inp_2-0"> </td>
+                <td> <input type="number" name="inp_2-1"> </td>
+                <td> <input type="number" name="inp_2-2"> </td>
+                <td> <input type="number" name="inp_2-3"> </td>
+            </tr>
+            <tr class="tr_input"  name="inp_3">
+                <td> <input type="text" id="inp_3-0"> </td>
+                <td> <input type="number" name="inp_3-1"> </td>
+                <td> <input type="number" name="inp_3-2"> </td>
+                <td> <input type="number" name="inp_3-3"> </td>
+            </tr>
+        </tbody>
+    </table> -->
+
+    <table  id="tableId" class="cont_table">
+        <th *ngFor="let col of columns">{{ col }}</th>
+        <tr *ngFor="let fila of rows">
+          <td *ngFor="let celda of fila" (click)="ocultarCeldas(celda)">
+            <div *ngIf="celda.edit">
+              <input type="text" [(ngModel)]="celda.value" />
+            </div>
+            <div *ngIf="!celda.edit">
+              {{ celda.value }}
+            </div>
+          </td>
+        </tr>
+    </table>
+
+    <!-- PARAMETROS DE CONFIGURACION -->
+    <div class="configuration">
+        <p>No, yo soy la configuracion</p>
+    </div>
+</div>
+
+
+<button class="button" (click)="pushColums()"> RESULTADO </button>
+
+<div class="result">
+
+    <div class="info_result">
+        <p> MAXI - MIN  </p>
+        <p>  </p>
+    </div> 
+
+</div>
