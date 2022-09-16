@@ -106,3 +106,43 @@ body{
     background-color: #363A6B;
     color: #ffffff;
 }
+
+h3{
+    padding: 1em;
+}
+
+h4{
+    padding: 0.3rem;
+}
+
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.2em;
+}
+
+.conf{
+    background-color: #2E9BEC;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.conf:hover{
+    background-color: #363A6B;
+    border:1px solid #2E9BEC;
+}
+
+.input{
+    background: none;
+    width: 10vw;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    padding-left: 10px;
+}
+

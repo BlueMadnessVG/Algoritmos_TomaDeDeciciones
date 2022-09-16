@@ -1,36 +1,6 @@
 <div class="Main_info">
 
     <!-- TABLA DE DATOS -->
-<!--     <table id="tableId" class="cont_table">
-        <thead >
-            <tr>
-                <th> NOMBRE </th>
-                <th> ALTO </th>
-                <th> MEDIO </th>
-                <th> BAJO </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="tr_input" name="inp_1">
-                <td> <input type="text" id="inp_1-0"> </td>
-                <td> <input type="number" name="inp_1-1"> </td>
-                <td> <input type="number" name="inp_1-2"> </td>
-                <td> <input type="number" name="inp_1-3"> </td>
-            </tr>
-            <tr class="tr_input"  name="inp_2">
-                <td> <input type="text" id="inp_2-0"> </td>
-                <td> <input type="number" name="inp_2-1"> </td>
-                <td> <input type="number" name="inp_2-2"> </td>
-                <td> <input type="number" name="inp_2-3"> </td>
-            </tr>
-            <tr class="tr_input"  name="inp_3">
-                <td> <input type="text" id="inp_3-0"> </td>
-                <td> <input type="number" name="inp_3-1"> </td>
-                <td> <input type="number" name="inp_3-2"> </td>
-                <td> <input type="number" name="inp_3-3"> </td>
-            </tr>
-        </tbody>
-    </table> -->
 
     <table  id="tableId" class="cont_table">
         <th *ngFor="let col of columns">{{ col }}</th>
@@ -48,18 +18,32 @@
 
     <!-- PARAMETROS DE CONFIGURACION -->
     <div class="configuration">
-        <p>No, yo soy la configuracion</p>
+
+        <h4> AUMENTAR PARAMETROS </h4>
+        <div class="buttons">
+            <button class="conf" (click)="pushColums()"> Columnas </button>
+            <button class="conf" (click)="pushRow()"> Filas </button>
+        </div>
+
+        <h4> VARIABLES </h4>
+        <div class="buttons">
+            <input type="text" class="input" [(ngModel)]="p" />
+            <input type="text" class="input" [(ngModel)]="q" />
+        </div>
+
+
     </div>
 </div>
 
 
-<button class="button" (click)="pushColums()"> RESULTADO </button>
+<button class="button" (click)="CalcularParametros()"> RESULTADO </button>
 
-<div class="result">
+<H3> HISTORIAL DE RESULTADOS </H3>
+<div class="result" *ngIf="resultados">
 
-    <div class="info_result">
+    <div *ngFor="let name of names" class="info_result">
         <p> MAXI - MIN  </p>
-        <p>  </p>
+        <p>  {{ name.nombre }} </p>
     </div> 
 
 </div>
